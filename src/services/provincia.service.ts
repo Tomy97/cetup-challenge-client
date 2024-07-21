@@ -1,26 +1,21 @@
-import axios from 'axios'
-import type { Provincia } from '@/types/Provincia'
+import type { Provincia } from "@/types/Provincia";
+import axios from "axios";
 
-export const getProvinciasService = async (): Promise<Provincia[]> => {
-  const { data } = await axios.get<Provincia[]>(`${import.meta.env.VITE_API_URL}/Provincia`)
-  return data
+export const getProvinciasService = async () => {
+  const { data } = await axios.get<Provincia[]>(
+    `${import.meta.env.VITE_API_URL}/Provincia`
+  );
+  return data;
+};
+
+export const createProvinciaService = async (form: { name: string }) => {
+  await axios.post(`${import.meta.env.VITE_API_URL}/Provincia`, form);
 }
 
-export const getProvinciaService = async (id: number): Promise<Provincia> => {
-  const { data } = await axios.get<Provincia>(`${import.meta.env.VITE_API_URL}/Provincia/${id}`)
-  return data
+export const deleteProvinciaService = async (id: number) => {
+  await axios.delete(`${import.meta.env.VITE_API_URL}/Provincia/${id}`);
 }
 
-export const createProvinciaService = async (provincia: Provincia): Promise<Provincia> => {
-  const { data } = await axios.post<Provincia>(`${import.meta.env.VITE_API_URL}/Provincia`, provincia)
-  return data
-}
-
-export const updateProvinciaService = async (id: number, provincia: Provincia): Promise<Provincia> => {
-  const { data } = await axios.put<Provincia>(`${import.meta.env.VITE_API_URL}/Provincia/${id}`, provincia)
-  return data
-}
-
-export const deleteProvinciaService = async (id: number): Promise<void> => {
-  await axios.delete<void>(`${import.meta.env.VITE_API_URL}/Provincia/${id}`)
+export const editProvinciaService = async (id: number, form: { nombre: string }) => {
+  await axios.put(`${import.meta.env.VITE_API_URL}/Provincia/${id}`, form);
 }

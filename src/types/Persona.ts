@@ -1,6 +1,6 @@
-import type { Provincia } from '@/types/Provincia'
+import type { Provincia } from "./Provincia";
 
-export type  Persona = {
+export type Persona = {
   id: number;
   nombre: string;
   apellido: string;
@@ -8,4 +8,4 @@ export type  Persona = {
   telefono: string;
   provinciaId?: number;
   provincia?: Provincia;
-}
+};

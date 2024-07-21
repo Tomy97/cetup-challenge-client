@@ -1,4 +1,6 @@
 export type Provincia = {
-  id: number;
+  id: string;
   nombre: string;
-}
+  fechaAlta: string;
+  fechaModificacion: string;
+};

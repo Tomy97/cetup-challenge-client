@@ -3,6 +3,6 @@
 </script>
 <template>
   <div>
-
+    Personas
   </div>
 </template>

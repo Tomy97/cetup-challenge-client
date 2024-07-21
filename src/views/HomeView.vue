@@ -1,23 +1,15 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
-import { useProvinciaStore } from '@/stores/provinciaStore'
-
-import Card from 'primevue/card'
-import ProvinciasDataTable from '@/components/Tables/ProvinciasDataTable.vue'
-
-const store = useProvinciaStore()
-
-onMounted(async () => {
-  await store.getProvincias()
-})
+  import AppCardLink from '@/components/Card/AppCardLink.vue'
 </script>
-
 <template>
-  <main>
-    <Card class="w-30rem">
-      <template #content>
-        <ProvinciasDataTable :provincias="store.provincias" />
-      </template>
-    </Card>
-  </main>
+  <v-container>
+    <v-row class="mt-5">
+      <v-col cols="12" md="6">
+        <AppCardLink title="Provincias" name="Provincias" />
+      </v-col>
+      <v-col cols="12" md="6">
+        <AppCardLink title="Personas" name="Personas" />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
